@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Animated Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c0826;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: linear-gradient(to right, #eae1e9, #567ca2);
+            background-color: rgb(59, 14, 68);
+            
+        }
+
+        .navbar-brand, .nav-link {
+    color: rgba(252, 251, 251, 0.973) !important;
+    margin: 0 13px; /* Left & Right spacing */
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* Cursor vaikumbothu color change */
+.navbar-brand:hover, .nav-link:hover {
+    color: rgb(206, 193, 21) !important; /* Change this to your preferred color */
+}
+
+        
+        .hero-section {
+            background: linear-gradient(to right, #67065b, #074582);
+            color: rgb(247, 240, 240);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            animation: fadeInDown 2s;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            animation: fadeInUp 2s;
+        }
+        .skill-bar {
+            height: 40px;
+            margin-bottom: 25px;
+            
+        }
+         .skill-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+       }
+
+        .portfolio-grid {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .portfolio-card {
+            background: linear-gradient(200deg, #130415 0%, #3d023d 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 30px; /* Reduced padding */
+            color: #fff;
+            transition: transform 0.3s ease;
+            /* Adjust width to make cards smaller */
+            width: 65%;
+            height: auto;
+            margin: 0 auto; /* Center the card */
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-card img {
+            width: 80px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 10px; /* Reduced margin */
+        }
+
+        .portfolio-card h2 {
+            margin: 10px 0 8px; /* Adjust margins */
+            font-size: 1.2rem; /* Smaller font size */
+        }
+
+        .portfolio-card p {
+            font-size: 1.0rem; /* Smaller font size */
+            margin-bottom: 15px;
+            text-align: left;
+            
+            
+        }
+
+        .portfolio-card a {
+            display: inline-block;
+            text-decoration: none;
+            background: #f4f1f3;
+            color: #1a0a1e;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            
+        }
+
+        .portfolio-card a:hover {
+            background: #020f12;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #2c0826;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+
+        /* New Skills*/
+
+
+
+        
+    .skills{
+   width: auto;
+   margin: 20px auto;
+   color: white;
+   padding: 20px;
+   /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba( 0, 0, 0, 0.22); */
+}
+.skill-list{
+   margin:  0;
+}
+
+.bar{
+   background: #7a7d7e;
+   display: block;
+   /* padding: 10px; */
+   height: 18px;
+   border: 1px solid rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba( 0, 0, 0, 0.24);
+   transition: all 0.3s cubic-bezier(.25,.8,.25,.1);
+   display: flex;
+   align-items: center;
+}
+.bar span{
+   height: 18px;
+   float: left;
+   background: blueviolet;
+
+}
+.html{
+   width: 90%;
+   animation: html 3s;
+
+}
+.css{
+   width: 85%;
+   animation: css 3s;
+}
+.js{
+   width: 80%;
+   animation: js 3s;
+}
+
+.c-c{
+   width: 60%;
+   animation: c-c 3s;
+}
+
+.boot{
+   width: 80%;
+   animation: boot 3s;
+}
+
+.react{
+   width: 50%;
+   animation: react 3s;
+}
+
+.sql{
+   width: 70%;
+   animation: sql 3s;
+}
+
+.tailwind{
+   width: 50%;
+   animation: tailwind 3s;
+}
+
+.bar:hover{
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 1px 2px rgb(212, 190, 228);
+}
+
+.skill-heading{
+   margin: 5px;
+   
+}
+
+.skill-list{
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.skills-percentage{
+   margin-left: 90%;
+}
+
+
+@keyframes html{
+   0%{
+       width: 0%;
+   }
+   100%{
+       width: 90%;
+   }
+}
+@keyframes css{
+   0%{
+       width: 0%;
+   }
+   100%{
+       width: 70%;
+   }
+}
+@keyframes js{
+   0%{
+       width: 0%;
+   }
+   100%{
+       width: 60%;
+   }
+}
+
+@keyframes c-c{
+   0%{
+       width: 0%;
+   }
+   100%{
+       width: 60%;
+   }
+}
+
+@keyframes react {
+   0%{
+      width: 0%;
+   }
+   100%{
+      width: 50%;
+   }
+}
+
+@keyframes sql {
+   0%{
+      width: 0%;
+   }
+   100%{
+      width: 70%;
+   }
+}
+
+@keyframes tailwind {
+   0%{
+      width: 0%;
+   }
+   100%{
+      width: 50%;
+   }
+}
+@keyframes boot {
+   0%{
+      width: 0%;
+   }
+   100%{
+      width: 80%;
+   }
+}
+
+/* Dynamic animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover effect for button */
+button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Input field focus effect */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #b3005a;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.8);
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+}@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.dynamic-resume{
+    color: white;
+   
+    font-size: 16px;
+    transition: all 0.3s ease-in-out; 
+    margin-top: 6.5px;
+    font-family:  'Roboto', sans-serif;;
+
+}
+/* Dynamic hover effect for buttons */
+.dynamic-resume:hover {
+    background-color: #28a745;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(2, 199, 28, 0.6);
+   
+    
+}
+
+.dynamic-linkedin:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
+}
+.dynamic-whatsapp
+{
+    
+    color: #25D366;
+    border: 1px solid white;
+}
+.dynamic-whatsapp:hover {
+    background-color: #25D366;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px #25D366;
+}
+.dynamic-twitter
+{
+    
+    color: white;
+    border: 1px solid white;
+}
+.dynamic-twitter:hover {
+    background-color: black;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px black;
+}
+
+/* Smooth transition for animations */
+.dynamic-resume, .dynamic-linkedin {
+    transition: all 0.3s ease-in-out;
+}
+@keyframes slideInFooter {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hover effect for footer text */
+footer:hover p {
+    transform: translateY(-5px);
+    color: #d81143; /* Light coral for highlight */
+    text-shadow: 0 2px 10px rgba(255, 204, 203, 0.5);
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s ease-in-out;
+}
+
+/* Footer responsiveness */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+.nav-link:active {
+    color: #25D366;
+}
+
+</style>
+    
+</head>
+<body>
+    <div class="home" id="home">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"> Sangeeth</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" >Home</a> <!-- Links to the About section -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a> <!-- Links to the About section -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a> <!-- Links to the Projects section -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a> <!-- Links to the Contact section -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" >Skills</a> <!-- Links to LinkedIn -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="./SANGERTH A B&W......1.pdf" class="btn  btn-sm dynamic-resume" download="C:\Users\S\portfolio1.html\Resume Sangeeth.pdf" >
+                            Download Resume
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+<section class="hero-section">
+    <img src="images/tech1.jpg" alt="Main Profile Image" style="border-radius: 100%; width: 300px; height: 300px; margin-bottom: 20px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);">
+    <h1 style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.6);">WEB DEVELOPER</h1>
+    <p style="text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);">Creative. Professional. Innovative.</p>
+</section>
+
+
+<div class="container py-5">
+    <section id="about" class="py-5 animate__animated animate__fadeIn">
+        <div class="row align-items-center">
+            <!-- Text Section -->
+            <div class="col-md-6">
+                <h1 class="text-center mb-4" style="color: white; font-family: Georgia, serif;">About Me</h1>
+                <p class="text-center" style="color: white; font-family: serif; font-size: 20px; font-weight: 300; line-height: 1.6;">
+                    "Hi, I’m Sangeeth, a beginner Web Developer passionate about crafting engaging and user-friendly websites. My journey started with HTML and CSS, and I’ve since expanded my skills to include JavaScript and basic back-end development with Node.js. I’m a team player who thrives in collaborative environments and is always eager to learn and grow. Take a look at my portfolio to see what I’ve been working on!"
+                </p>
+            </div>
+            <!-- Image Section -->
+            <div class="col-md-6 text-center">
+                <img src="C:\Users\AMMA\Desktop\Sangeeth\Portfolio\images\InShot_20250120_175729726.jpg" alt="About Me Image" class="img-fluid rounded-circle shadow-lg" style="width: 80%; max-width: 300px; border: 5px solid #fff;">
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+    
+  <section id="skills" class="container-fluid mt-5" style="background-color:   #2c0826; padding: 20px;">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-center text-uppercase pb-3" style="color: rgb(238, 235, 231);">My Skills</h4>
+      </div>
+    </div>
+    <div class="row" style="background-color: #2c0826; opacity: 0.9; border-radius: 10px;">
+      <div class="col-md-6" style="padding: 10px;">
+        <div class="skills py-2" id="skills">
+
+          <li class="skill-list mt-3">
+            <h5 class="skill-heading">HTML <span class="skills-percentage"></span></h5>
+            <span class="bar"><span class="html" style="border-right: 3px solid whitesmoke;"></span>90%</span>
+          </li>
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">CSS</h5>
+            <span class="bar"><span class="css" style="border-right: 3px solid whitesmoke;"></span>85%</span>
+          </li>
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">JavaScript</h5>
+            <span class="bar"><span class="js" style="border-right: 3px solid whitesmoke;"></span>80%</span>
+          </li>
+
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">BootStrap</h5>
+            <span class="bar"><span class="boot" style="border-right: 3px solid whitesmoke;"></span>80%</span>
+          </li>
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">Tailwind CSS</h5>
+            <span class="bar"><span class="tailwind" style="border-right: 3px solid whitesmoke;"></span>50%</span>
+          </li>
+
+        </div>
+      </div>
+     
+
+      <div class="col-md-6" style="padding: 10px;">
+        <div class="skills py-2" id="skills">
+
+          
+            <li class="skill-list mt-4">
+                <h5 class="skill-heading">React Js</h5>
+                <span class="bar"><span class="react" style="border-right: 3px solid whitesmoke;"></span>50%</span>
+              </li>
+             
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">C & C++</h5>
+            <span class="bar"><span class="c-c" style="border-right: 3px solid whitesmoke;"></span>60%</span>
+          </li>
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">MySQL</h5>
+            <span class="bar"><span class="sql" style="border-right: 3px solid whitesmoke;"></span>70%</span>
+          </li>
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">Python</h5>
+            <span class="bar"><span class="sql" style="border-right: 3px solid whitesmoke;"></span>70%</span>
+          </li>
+          <li class="skill-list mt-4">
+            <h5 class="skill-heading">Django</h5>
+            <span class="bar"><span class="sql" style="border-right: 3px solid whitesmoke;"></span>70%</span>
+          </li>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <section id="projects" class="py-5">
+        <h1 class="text-center mb-4 left" style="color: white;font-family: serif;">Featured Projects</h1>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-card">
+                    <img src="./images/port.png" alt="Portfolio Thumbnail">
+                    <h2> PortFolio Website </h2>
+                    <p>Developed My personal portfolio website with Html, Css, BootStrap and JavaScript,featuring a responsive design and dynamic components. 
+                    </p><br><a href="https://github.com/Sangeeth1201?tab=repositories" target="_blank">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-card">
+                    <img src="./images/ec.png" alt="Portfolio Thumbnail">
+                    <h2>E-Commerce </h2>
+                    <p>Designed the frontend with HTML, CSS,Bootstrap, JavaScript, and Developed implemented a scalable backend using Django and MySQL.</p><br>
+                    <a href="https://github.com/Sangeeth1201?tab=repositories" target="_blank">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-card">
+                    <img src="./images/lms-learning-management-system-line-260nw-1994276849.webp" alt="Portfolio Thumbnail">
+                    <h2>LMS</h2>
+                    <p>A web-based system for managing online courses, quizzes, and student progress. It includes features like real-time assessments
+                        and secure user authentication.</p>
+                    <a href="https://github.com/Sangeeth1201?tab=repositories" target="_blank">Explore More</a>
+                </div>
+            </div>
+
+                </section>
+
+                <section id="contact" class="py-4 animate__animated animate__fadeInUp" style="background-color:#2d0326; overflow: hidden;">
+                    <div class="container" style="animation: slideIn 2s ease-in-out;">
+                        <h2 class="text-center mb-3" style="font-family: 'Georgia', serif; color: #fbf5fa; font-size: 1.8rem; animation: fadeIn 1.5s;">
+                            Contact Me
+                        </h2>
+                        
+                
+                        <div class="row justify-content-center">
+                            <div class="col-md-6" style="animation: popUp 1.2s ease-in-out;">
+                                <form action="mailto:sangeethsangeeth1242@gmail.com" method="post" enctype="text/plain" style="box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); border-radius: 10px; padding: 20px; background-color: rgba(255, 255, 255, 0.1);">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label" style="font-size: 0.9rem; color: #fbf5fa;">
+                                            Your Name
+                                        </label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required style="font-size: 0.9rem; box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label" style="font-size: 0.9rem; color: #fbf5fa;">
+                                            Your Email
+                                        </label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required style="font-size: 0.9rem; box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label" style="font-size: 0.9rem; color: #ffffff;">
+                                            Your Message
+                                        </label>
+                                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required style="font-size: 0.9rem; box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100" style="font-size: 0.9rem; transform: scale(1); transition: transform 0.3s ease-in-out;">
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <div class="text-center mt-4">
+                    <a href="./SANGERTH A B&W......1.pdf" class="btn btn-outline-success btn-sm dynamic-resume">
+                         My Resume
+                    </a>
+                </div> 
+                
+                <div class="text-center mt-4">
+                    <p style="font-size: 0.9rem; color:#fbf5fa; animation: fadeInText 1.5s ease-in-out;">
+                        Or connect with me on:
+                    </p>
+                    <a href="https://www.twitter.com" target="_blank" class="btn  btn-sm mx-2 dynamic-twitter" style="font-size: 0.8rem; transition: all 0.3s ease-in-out;">
+                        <i class="fa-brands fa-x-twitter fa-2x"></i>  
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-primary btn-sm mx-2 dynamic-linkedin" style="font-size: 0.8rem; transition: all 0.3s ease-in-out;">
+                        <i class="fa-brands fa-linkedin fa-2x" ></i>
+                    </a>
+                    <a href="https://www.whatsapp.com" target="_blank" class="btn  btn-sm mx-2 dynamic-whatsapp" style="font-size: 0.8rem; transition: all 0.3s ease-in-out;">
+                        <i class="fa-brands fa-square-whatsapp fa-2x"></i>
+                    </a>
+                </div>
+                <footer style="background-color: #2c0826; padding: 10px 0; text-align: center; color: #fbf5fa; position: relative; overflow: hidden; animation: slideInFooter 2s ease-in-out;">
+                    <p style="font-size: 0.9rem; margin: 0; transform: translateY(0); transition: transform 0.3s;">
+                        &copy; 2025 Sangeeth. All rights reserved.
+                    </p>
+                </footer>
+                
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                
+                </body>
+                </html>
